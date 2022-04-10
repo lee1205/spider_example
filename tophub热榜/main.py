@@ -2,7 +2,6 @@ import requests
 from lxml import etree
 from fake_useragent import UserAgent
 import time
-from multiprocessing import Process
 from tophub热榜 import Xlsx
 
 
@@ -59,9 +58,8 @@ class Gethtml:
 
 
 #解析html代码
-class Parse(Process):
+class Parse:
     def __init__(self):
-        Process.__init__(self)
         self.xl = Xlsx()
         self.t = time.strftime("%Y-%m-%d")
 
@@ -90,7 +88,7 @@ if __name__ == '__main__':
     crawl = Gethtml(proxies)
     crawl.run()
     parse = Parse()
-    parse.start()
+    parse.run()
 
 
 
