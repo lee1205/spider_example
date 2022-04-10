@@ -4,7 +4,7 @@ from fake_useragent import UserAgent
 import requests
 from lxml import etree
 
-
+#PS:只是爬取100部电影信息不按排名排序整理
 # 多线程爬虫
 class CrawlInfo(Thread):
     def __init__(self, url_queue,html_queue):
